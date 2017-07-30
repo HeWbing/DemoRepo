@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hwb.dao.UserTestMapper">
+
+    <resultMap id="resultMap" type="com.hwb.bean.UserTest">
+        <id column="ID" property="id" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="SEX" property="sex" jdbcType="SMALLINT"/>
+        <result column="AGE" property="age" jdbcType="SMALLINT"/>
+        <result column="BIRTHDAY" property="birthday" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="columnList">
+        t.ID,t.USER_NAME,t.SEX,t.AGE,t.BIRTHDAY
+    </sql>
+    <select id="selectUserById" parameterType="java.lang.Long" resultMap="resultMap">
+        SELECT
+        <include refid="columnList" />
+        FROM USER_TEST t
+        WHERE t.id = #{userId}
+    </select>
+
+    <select id="selectUserBySex" resultMap="resultMap">
+        SELECT
+        <include refid="columnList" />
+        FROM USER_TEST t
+        WHERE t.SEX = #{sex}
+    </select>
+
+    <select id="selectAllUser" resultMap="resultMap">
+        SELECT
+        <include refid="columnList" />
+        FROM USER_TEST t
+    </select>
+
+</mapper>
