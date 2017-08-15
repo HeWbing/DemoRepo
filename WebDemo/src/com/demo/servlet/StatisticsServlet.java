@@ -41,7 +41,7 @@ public class StatisticsServlet extends HttpServlet{
 		int loginTimes = 0;
 		String loginTimeStr = (String) request.getSession().getAttribute("loginTimes");
 		String nowTime = new SimpleDateFormat(DATE_FORMAT).format(new Date());
-		String loginMsg = "登录时间： "+nowTime+ "\t登录IP: "+Tools.getIpAddress(request);
+		String loginMsg = "登录时间："+nowTime+ "\t登录IP："+Tools.getIpAddress(request);
 		if ( loginTimeStr == null || "null".equals(loginTimeStr)) {
 			loginTimes = FileUtils.ReadFile(request.getSession().getServletContext().getRealPath("/")+"/doc/login.txt");
 		}else{

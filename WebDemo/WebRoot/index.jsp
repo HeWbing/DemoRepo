@@ -1,5 +1,4 @@
 <%@page import="com.demo.servlet.StatisticsServlet"%>
-<%@page import="com.demo.utils.StatisticsUtils"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
