@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="JavaTimerTaskDemo"
+  id="myeclipse.1505313113479"
+  context-root="/JavaTimedTaskDemo"
+  j2ee-spec="5.0"
+  archive="JavaTimerTaskDemo.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
